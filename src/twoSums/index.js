@@ -9,7 +9,21 @@
  * twoSums([5, 9, 3], 12); // [9, 3]
  */
 const twoSums = (arr, base) => {
-  /* your logic here...*/
+  let diffBase;
+  let resultArr = [];
+  arr.forEach(function(el,i){
+   if(i==0){
+   		diffBase = base - el;
+   }
+   if(i>0) {
+   	   if(diffBase==el){
+   		resultArr.push(arr[i-1],arr[i]);
+   		} else {
+   			diffBase = base - el;
+   		}
+   	}
+  });
+  return resultArr;
 };
 
 export default twoSums;
