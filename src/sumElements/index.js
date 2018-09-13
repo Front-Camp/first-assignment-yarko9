@@ -10,8 +10,23 @@
  * sumElements(['1', 'hi', 3]);     // 4
  * sumElements([Infinity, NaN, 1]); // 1
  */
-const sumElements = arr => {
-  /* your logic here...*/
+const twoSums = (arr, base) => {
+  let diffBase;
+  let resultArr = [];
+  arr.forEach(function(el,i){
+   if(i==0){
+   		diffBase = base - el;
+   }
+   if(i>0) {
+   	   if(diffBase==el){
+   		resultArr.push(arr[i],arr[i-1]);
+   		}
+   		else {
+   			diffBase = base - el;
+   		}
+   	}
+  });
+  return resultArr;
 };
 
 export default sumElements;
